@@ -1,0 +1,23 @@
+{
+  "name": "math",
+  "version": "1.0.0",
+  "description": "A math library for JavaScript written in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm build/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denizat/math.js.git"
+  },
+  "keywords": [
+    "Math"
+  ],
+  "author": "Deniz Anar Telci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denizat/math.js/issues"
+  },
+  "homepage": "https://github.com/denizat/math.js#readme"
+}
