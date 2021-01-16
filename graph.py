@@ -13,32 +13,44 @@ TODO:
 * Make all of the algorithims more efficient.
 '''
 
-from turtle import *
-from math import *
-bgcolor("black")
-color("white") 
-speed(5)
+import math as m, turtle as t
+t.bgcolor("black")
+t.color("white") 
+t.speed(5)
+
+
+x = [[0,0]] # Array initialization and starting point 
 n = 10 # Number of sides
 r = 200 # Side length
-epochs = 1 # Number of iterations
-x = [[0,0]] # Array initialization and starting point 
-
-angle = 2*pi/n
+angle = 2*m.pi/n
 angleinc = angle
+def initalizePolygon():
+    for i in range(1,n):
+        global angle
+        global angleinc
+        angle += angleinc
+        x.append([x[i-1][0]+m.cos(angle),x[i-1][1]+m.sin(angle)])
+    for i in range(1,n):
+        x[i][0] =x[i][0]*r 
+        x[i][1] = x[i][1]*r
 
-for i in range(1,n):
-    angle += angleinc
-    x.append([x[i-1][0]+cos(angle),x[i-1][1]+sin(angle)])
-for i in range(1,n):
-    x[i][0] =x[i][0]*r 
-    x[i][1] = x[i][1]*r
+# Draws all of the connections between all of the points in the x array.
+def draw():
+    for i in range(len(x)):
+        for y in range(i,len(x)):
+            t.goto(x[y])
+            t.goto(x[i])
 
-for i in range(n):
-    for y in range(i,n):
-        goto(x[y])
-        goto(x[i])
 
-done()
+def checkY(a1,a2,b1,b2):
+
+def between(a1,a2,b1,b2):
+def checkX(a1x,a2x,b1x,b2x):
+    if(between(a1x,b1x,a2x)
+# Takes line segments a1-a2 and b1-b2 and checks if the intersect.
+def intersects(a1,a2,b1,b2):
+
+
 '''
 def intersects():
     return # True or false
@@ -60,3 +72,7 @@ while(epochs > 0):
                         if(intersects(x[i],x[j])):
                             x.append(intersection(x[i],x[j]))
 '''
+
+initalizePolygon()
+draw()
+done()
