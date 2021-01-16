@@ -13,15 +13,17 @@ TODO:
 * Make all of the algorithims more efficient.
 '''
 
-import math as m, turtle as t
+import math as m, turtle as t, random as rand
 t.bgcolor("black")
 t.color("white") 
 t.speed(0)
 t.width(1)
+t.tracer(1)
+
 
 
 x = [[0,0]] # Array initialization and starting point 
-n = 25 # Number of sides
+n = 20 # Number of sides
 r = 100 # Side length
 angle = 2*m.pi/n
 angleinc = angle
@@ -93,5 +95,7 @@ def iterate():
 
 initalizePolygon()
 # iterate()
+#for i in range(n):
+#   x.append([rand.randint(-200,500),rand.randint(-200,500)])
 draw()
 t.done()
