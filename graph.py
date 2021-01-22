@@ -12,7 +12,7 @@ TODO:
 
 * Make all of the algorithims more efficient.
 '''
-
+import time
 import math as m, turtle as t, random as rand
 t.bgcolor("black")
 t.color("white") 
@@ -23,14 +23,14 @@ t.tracer(1)
 
 
 x = [[0,0]] # Array initialization and starting point 
-n = 20 # Number of sides
 r = 100 # Side length
-angle = 2*m.pi/n
-angleinc = angle
-def initalizePolygon():
+
+def initalizePolygon(n):
+    global x
+    x = [[0,0]]
+    angle = 2*m.pi/n
+    angleinc = angle
     for i in range(1,n):
-        global angle
-        global angleinc
         angle += angleinc
         x.append([x[i-1][0]+m.cos(angle),x[i-1][1]+m.sin(angle)])
     for i in range(1,n):
@@ -38,7 +38,7 @@ def initalizePolygon():
         x[i][1] = x[i][1]*r
 
 # Draws all of the connections between all of the points in the x array.
-def draw():
+def draw(n):
     c = r/(2*m.sin(m.pi/n))
     t.penup()
     t.goto(0+r,0-c)
@@ -48,7 +48,7 @@ def draw():
             t.goto(x[y][0]+r,x[y][1]-c)
             t.goto(x[i][0]+r,x[i][1]-c)
             # What does including this do? t.goto(x[y][0]+r,x[y][1]-c)
-
+'''
 def between(a1,a2,b1,b2):
     if(a1 < b1 < a2 or a2 < b1 < a1):
         return True
@@ -63,7 +63,7 @@ def between(a1,a2,b1,b2):
 
 def intersects(a1,a2,b1,b2):
     return(between(a1[0],a2[0],b1[0],b2[0]) and between(a1[1],a2[1],b1[1],b2[1])) 
-'''
+
 # Completely Broken
 
 def intersectionPoint(a1,a2,b1,b2):
@@ -92,10 +92,9 @@ def iterate():
                 for k in range(length):
                     makeIntersection(x[i],x[j],x[h],x[k])
 '''
-
-initalizePolygon()
-# iterate()
-#for i in range(n):
-#   x.append([rand.randint(-200,500),rand.randint(-200,500)])
-draw()
+for i in range(0,20):
+    t.clear()
+    initalizePolygon(i)
+    draw(i)
+    time.sleep(1)
 t.done()
