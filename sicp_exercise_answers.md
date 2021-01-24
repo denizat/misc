@@ -83,3 +83,8 @@ The good-enough? test is also not vert effective for very large numbers. This is
 		9
 		
 Both of the above procedures are recursive. However, the first process is recursive while the second is iterative. This can be seen by how the first process expands and contracts during evaluation while the second process remains a constant size.
+
+## Excersize 1.10
+The first expression `(A 1 10)` when fully expanded becomes `A(0,A(0,A(0,...A(0,1)...)`, `A(0, y)` returns 2*y. So, the fully expanded function will return 2*2*2...2*y and, because the function expands while y is above 1 and the function decrements 1 from y each time, the final product becomes 2^9.
+
+The second expression `(A 2 4)`
