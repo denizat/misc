@@ -87,4 +87,14 @@ Both of the above procedures are recursive. However, the first process is recurs
 ## Excersize 1.10
 The first expression `(A 1 10)` when fully expanded becomes `A(0,A(0,A(0,...A(0,1)...)`, `A(0, y)` returns 2*y. So, the fully expanded function will return 2*2*2...2*y and, because the function expands while y is above 1 and the function decrements 1 from y each time, the final product becomes 2^9.
 
-The second expression `(A 2 4)`
+The second expression `(A 2 4)`. `(A 1 y)` = 2^(y-1). `(A 2 y)` = 2^(2^(y-1)). `(A 2 4)` = 2^(2^(3)) = 2^8
+
+The third expression `(A 3 3)`. A(x,y) = 2^2^2^...x times in total...2^(y-3). `(A 3 3)` = 2^(2^(2^(2))) = 2^16
+
+f(n) = n*2^0
+
+g(n) = 2^(n-1)
+
+h(n) = 2^(2^(n-1))
+
+k(n) = 5*(n^2)
