@@ -61,3 +61,25 @@ The good-enough? test is also not vert effective for very large numbers. This is
 
 		(define (cbrt x)
 		  (cbrt-iter 1.0 x))
+
+## Excercise 1.9
+		
+		(+ 4 5)
+		(inc (+ 3 5))
+		(inc (inc (+ 2 5)))
+		(inc (inc (inc (+ 1 5))))
+		(inc (inc (inc (inc (+ 0 5)))))
+		(inc (inc (inc (inc 5))))
+		(inc (inc (inc 6)))
+		(inc (inc 7))
+		(inc 8)
+		9
+		
+		(+ 4 5)
+		(+ 3 6)
+		(+ 2 7)
+		(+ 1 8)
+		(+ 0 9)
+		9
+		
+Both of the above procedures are recursive. However, the first process is recursive while the second is iterative. This can be seen by how the first process expands and contracts during evaluation while the second process remains a constant size.
