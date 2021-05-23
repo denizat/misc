@@ -62,4 +62,21 @@ function f(max) {
   }
 }
 
-console.log(f(10000));
+console.log(
+  ((m) => {
+    if (m !== 0) {
+      if (!(m % 3)) {
+        if (!(m % 5)) {
+          return f(m - 1) + "fizzbuzz ";
+        }
+        return f(m - 1) + "fizz ";
+      } else if (!(m % 5)) {
+        return f(m - 1) + "buzz ";
+      } else {
+        return f(m - 1) + m.toString() + " ";
+      }
+    } else {
+      return "";
+    }
+  })()
+);
