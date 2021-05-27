@@ -63,20 +63,16 @@ function f(max) {
 }
 
 console.log(
-  ((m) => {
-    if (m !== 0) {
-      if (!(m % 3)) {
-        if (!(m % 5)) {
-          return f(m - 1) + "fizzbuzz ";
-        }
-        return f(m - 1) + "fizz ";
-      } else if (!(m % 5)) {
-        return f(m - 1) + "buzz ";
+  (function a(e) {
+    if (e !== 0) {
+      if (!(e % 3) || !(e % 5)) {
+        console.log(`${!(e % 3) ? "fizz" : ""}`);
+        return a(e - 1) + `${!(e % 3) ? "fizz" : ""}${!(e % 5) ? "buzz" : ""}`;
       } else {
-        return f(m - 1) + m.toString() + " ";
+        return a(e - 1) + " " + e.toString() + " ";
       }
     } else {
       return "";
     }
-  })()
+  })(100)
 );
