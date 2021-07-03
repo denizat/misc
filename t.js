@@ -116,3 +116,19 @@
 //       : "";
 //   })(100)
 // );
+
+// console.log(
+//   (function a(e) {
+//     return e !== 0
+//       ? a(e - 1) +
+//       (e % 3 && e % 5
+//         ? " " + e.toString() + " "
+//         : `${!(e % 3) ? "fizz" : ""}${!(e % 5) ? "buzz " : ""}`)
+//       : "";
+//   })(100)
+// );
+
+
+
+
+console.log((function a(e){return e!==0?a(e-1)+(e%3&&e%5?" "+e.toString()+" ":`${!(e % 3)?"fizz":""}${!(e % 5)?"buzz ":""}`):"";})(100));
