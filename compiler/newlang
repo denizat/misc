@@ -1,0 +1,66 @@
+; just a cross between c++ and python
+; nice python syntax and list comprehension
+; nice c++ compiling and static analysis
+; better comment character with lisp ; symbol, also, if c programmers do it out of habit then
+; the program will not crash
+
+auto main():
+; can also be
+main(): ; the : gives us enough information
+;
+	return 0;
+
+
+
+ex_done():
+	for i = 0 i < xbufcurr:
+	// or
+	for i in range(xbufcurr):
+	// should compile to the same thing
+	for i = 0; i < xbufcurr: bufs_free(i)
+
+
+tst():
+// same as
+auto tst():
+[i for i in range(100)]
+
+
+// new inline syntax
+j$
+
+<header>Cars{[i.toString() for i in a].join()} and Cons and CDR</header>
+{s$NAME IN TABLE {table}$}
+\$
+
+$
+
+
+for name in s$select names from table brands$:
+	cars and cons and cdr...
+
+
+genalloc=myalloc()
+
+scopealloc=theiralloc()
+
+defaults to malloc()
+
+
+u8 is exactly 8 byes
+int is whatever your system/compiler thinks an int is
+
+
+class Cents:
+
+
+
+
+	...
+	operator + (const Cents &c1, const Cents &c2):
+		...
+		return ...
+	operator is (const Cents &c1, const Cents &c2): // not proper usage, just example
+		return c1.pennies == c2.pennies and c1.nickels == c2.nickesl && ..
+	operator == (...):
+		return c1.total == c2.total

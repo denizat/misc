@@ -1,0 +1,5 @@
+sat/build
+node_modules
+.parcel-cache
+make-your-own-lisp/mpc
+a.out
