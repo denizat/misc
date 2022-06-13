@@ -1,0 +1,95 @@
+import stdio // module system, local modules take precedent
+include stdio.h // also dumb as rocks include system, just straight up puts the file there, mostly should not be allowed
+
+// exported inline functions are not allowed
+// macros are allowed since you can do really cool things with them
+
+
+/*
+multiline /* nesting */
+comment
+*/
+
+struct token:
+	int type
+	char ptr val
+	union:
+		int x
+		float y
+
+typdef t2 token
+
+enum rand:
+	a = 100
+	b = 200
+	c = 300
+
+global enum r2:
+	a = 300
+	b = 400
+enum tok:
+	a, b, c, d
+	e, f, g, h
+	i, j, k, l
+
+
+class Animal:
+	virtual str noise
+
+class Cat public Animal:
+	noise:
+		return "meow"
+
+class Dog public Animal:
+	noise():
+		return "woof"
+
+
+
+typedef function (void => int)
+
+// two symbols followed by a parenthasis is a function declaration
+int main(): // aa bb(...): -> function prototype
+	x = 21 // first assignment is initialization, we have type infrencing
+	x += 22
+	const whole y = 777
+	stdio.print(y * tok.a * tok.b * tok.c)
+	stdio.print(x)
+	stdio.assert(x**2 == x*x)
+	// we use the dot operator for namespaces, structs, unions, classes and named enums
+
+	ptr char str1, str2, str3 // we use ptr instead of *
+	arr char str4, str5, str6 // fat pointer with array length (access with .len)
+
+	int x = 3
+	match x:
+		0: print "zero"
+		1..10: print "small"
+		default: print "large"
+
+	int y =
+	match x:
+		0: 1
+		1..10: 100
+		default: -20
+
+	y = rand.a
+	y = b // r2.b
+
+
+
+
+
+
+typedef int whole // we have 2 step compilation so no need for forward declaration
+
+
+
+
+// this is a test, you do not need to declare a string unless you use a colon
+test sanity check:
+	assert(1 + 1 == 2)
+
+// tests are like mini main functions
+test "sanity check 2: electric boogaloo":
+	assert(2 + 2 == 4)
